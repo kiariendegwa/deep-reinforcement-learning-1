@@ -50,4 +50,4 @@ DQN agent with some of the following architectural hacks.
 
 # Trained model
 The neural weights of the trained agent can be found in the link below
-[Trained model (DDQN)](./checkpoint.pth)
+[Trained model (DQN)](./checkpoint.pth)
