@@ -5,9 +5,21 @@ The final algorithm uses a DQN network with experience replay - similar to that 
 
 # Learning Algorithm
 The main scripts employed are:
-* ```dqn_agent.py```
-* ```model.py```
+* ```dqn_agent.py```:
+
+    Contains the Experience Replay buffer, and Deep Q network logic.
+
+* ```model.py```:
+
+    1. Contains a simple 3 layer MLP using RELU activations.
+
+    2. The MLPs input layer has an input states size of 37 
+    
+    3. and its output layer is comprised of size 4 given the action state space.
+
 * ```Navigation_Pixels.ipynb```
+
+    Stitches together all the moving parts and initiates the Agents training.
 
 
 ## 1. Experience Replay
