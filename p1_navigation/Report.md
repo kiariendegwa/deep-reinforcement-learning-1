@@ -1,6 +1,6 @@
 # Summary
-This report is based on a DQN that makes use of Experience replay to the Banana navigation task. 
-The project made use of a state representation summarized by the Banana environment. Pixel level information was not used.
+This report is based on a DQN that makes use of [Experience Replay](https://arxiv.org/abs/1712.01275) to the [Unity's](https://github.com/Unity-Technologies/ml-agents) Banana navigation task. 
+The project made use of a state representation; summarized by a 36D Banana environment vector. Pixel level information was not used.
 The final algorithm uses a DQN network with experience replay - similar to that described in the seminal paper [Playing Atari with Deep Reinforcement Learning](https://arxiv.org/pdf/1312.5602v1.pdf).
 
 # Learning Algorithm
