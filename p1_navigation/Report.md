@@ -23,7 +23,7 @@ The main scripts employed are:
 
 
 ## 1. Experience Replay
-Each trajectory (s_t, a_t, r_t, s_t+1) gotten from interaction with the agents environment is stored in a replay buffer. 
+Each trajectory (s_t, a_t, r_t, s_t+1) gotten from interaction with the agent's environment is stored in a replay buffer. 
 These transitions are then sampled from randomly during gradient updates of the DQN agent. 
 
 This has a couple of advantages:
