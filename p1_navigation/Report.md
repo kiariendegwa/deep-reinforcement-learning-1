@@ -7,7 +7,13 @@ The final algorithm uses a DQN network with experience replay - similar to that 
 The main scripts employed are:
 * ```dqn_agent.py```:
 
-    Contains the Experience Replay buffer, and Deep Q network logic.
+    Contains the Experience Replay buffer, and Deep Q network logic. This has the hyper-parameters:
+    1. BUFFER_SIZE = 1e5,
+    2. BATCH_SIZE 64,
+    3. GAMMA = 0.99,
+    4. TAU=1e-3,
+    5. LR=5e-4,
+    6. UPDATE_EVERY=4
 
 * ```model.py```:
 
