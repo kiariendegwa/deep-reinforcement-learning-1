@@ -52,10 +52,10 @@ The agent achieves a score of roughly 13.0 after 500 episodes as evidence by the
 The number of episodes required to learn the task, can most likely be improved by further augmenting the 
 DQN agent with some of the following architectural hacks.
 - [Prioritized Experienced Replay](https://arxiv.org/abs/1511.05952):
-This has the added advantage of allowing the model to prioritize certain experience more often - rather than randomly sampling experiences from out replay buffer. This could lead to faster more robust convergence.
+This has the added advantage of allowing the model to prioritize certain experience tuples more often - rather than randomly sampling from out replay buffer. This could lead to faster more robust convergence.
 - [Dueling Network Architecture](https://arxiv.org/pdf/1511.06581.pdf)
-In order for the model to learn how best to evaluate a state in the Q-table, it must be able to estimate two primitives. Namely: given a state, the advantage of taking an action given that state, and the state value. This is represented by the equation:
-```Q(s, a) = A(a, s)+V(s)``` This allows the model to decouple these two state aspects by redefining the training objective as a multi-class problem. I.e. we can learn what states are valuable, and what actions are valuable given such states.
+In order for the model to learn how best to evaluate a state in the Q-table, it must be able to estimate two primitives. Namely: given a state, the advantage of taking an action given that state A(s, a), and the state value V(s). This is represented by the equation:
+```Q(s, a) = A(a, s)+V(s)``` This allows the model to decouple these two state aspects by redefining the training objective as a multi-class problem. I.e. we can learn what states are valuable, whilst separately learning what actions are valuable given such states.
 
 # Trained model
 The neural weights of the trained agent can be found in the link below
