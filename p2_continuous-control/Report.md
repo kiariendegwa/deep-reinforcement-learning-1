@@ -49,7 +49,7 @@ The DQN agent described above is Greedy in the limit with Infinite exploration (
 
 # Rewards Result
 The agent achieves a score of roughly 13.0 after 500 episodes as evidence by the graph below:
-![Reward Plots](results.png)
+![Reward Plots](./score_graphs.jpg)
 # Ideas for Future Work
 The number of episodes required to learn the task, can most likely be improved by further augmenting the 
 DQN agent with some of the following architectural hacks.
