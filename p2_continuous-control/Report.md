@@ -49,7 +49,7 @@ This has a couple of advantages:
 The DQN agent described above is Greedy in the limit with Infinite exploration (GLIE), as the epsilon greedy approach is used by annealing the epsilon function initially from 1.0, at a rate of 0.995 after each episode.
 
 # Rewards Result
-The agent achieves a score of roughly 13.0 after 500 episodes as evidence by the graph below:
+The agent achieves a score of roughly 30 after roguhly 700 episodes as evidence by the graph below:
 ![Reward Plots](./score_graphs.jpg)
 
 # Ideas for Future Work
