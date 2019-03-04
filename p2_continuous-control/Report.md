@@ -50,7 +50,7 @@ The agent achieves a score of roughly 30 after roughly 700 episodes as evidenced
 ![Reward Plots](./score_graphs.jpg)
 
 # Ideas for Future Work
-Continuous state space problems have been solved by other creative problems such as PPO, A3C, or D4PG.
+Continuous state space problems have been solved by other creative problems such as [PPO](https://arxiv.org/abs/1707.06347), [A3C](https://arxiv.org/abs/1602.01783), or [D4PG](https://arxiv.org/abs/1804.08617).
 Each of these have the added advantage of parallelizing training across multiple agents, thereby speeding up
 the accumulation of experience with which to train the actor-critic methods.
 
