@@ -1,6 +1,6 @@
 # Summary
 This report is based on a DDPG algorithm for a continuous control task, whereby the goal is to teach a robot arm(with 2 d.o.f.) how to 
-follow a randomly moving target. The final algorithm is based on the paper labelled, [Continuous control with Deep RL](https://arxiv.org/pdf/1509.02971.pdf).
+follow a randomly moving target. The final algorithm is based on the paper: [Continuous control with Deep RL](https://arxiv.org/pdf/1509.02971.pdf). The final algorithm that resulted in the following training graph was heavily based of the exercises within Udacity's Continuous Control section.
 
 # Learning Algorithm
 The main scripts employed are:
@@ -29,7 +29,8 @@ The main scripts employed are:
 
     Stitches together all the moving parts and initiates the Agents training.
 
-
+# Unique model architecture details
+The DDPG Actor-critic model has the following unique architectural
 ## 1. Experience Replay
 Each trajectory (s_t, a_t, r_t, s_t+1) gotten from interaction with the agent's environment is stored in a replay buffer. 
 These transitions are then sampled from randomly during gradient updates of the DQN agent. 
