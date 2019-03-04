@@ -62,4 +62,4 @@ In order for the model to learn how best to evaluate a state in the Q-table, it 
 
 # Trained model
 The neural weights of the trained actor-critic agent can be found in the link below
-[Trained model weights (DDPG)](./checkpoint_actor.pth)(./checkpoint_critic.pth)
+Trained model weights (DDPG)[actor](./checkpoint_actor.pth), [critic](./checkpoint_critic.pth)
