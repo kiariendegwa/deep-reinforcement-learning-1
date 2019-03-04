@@ -1,6 +1,5 @@
 # Reacher Report
-This report is based on a DDPG algorithm for a continuous control task, whereby the goal is to teach a robot arm(with 2 d.o.f.) how to 
-follow a randomly moving target. The final algorithm is based on the paper: [Continuous control with Deep RL](https://arxiv.org/pdf/1509.02971.pdf). The final algorithm that resulted in the following training graph was heavily based of the exercises within Udacity's Continuous Control section.
+This report is based on a DDPG algorithm for a continuous control task - Reacher task; whereby the goal is to teach a robot arm(with 2 d.o.f.) how to follow a randomly moving target. The final algorithm is based on the paper: [Continuous control with Deep RL](https://arxiv.org/pdf/1509.02971.pdf). The implemented algorithm is heavily based of the exercises within Udacity's Continuous Control section.
 
 ## Learning Algorithm particulars
 The main scripts employed are:
@@ -29,17 +28,25 @@ The main scripts employed are:
 
     Stitches together all the moving parts and initiates the Agents training.
 
-# Unique model architecture details
-The DDPG Actor-critic model has the following unique adventageous designs
+### Unique model architecture details
+The DDPG Actor-critic model is comprised of 4 neural networks, these are:
+1. The actor
+2. The critic
+3. The actor target network
+4. The critic target network
+5. A replay buffer
+6. Soft weight updates
+7. Ornstein Uhlenbeck noise
 
-DDPG is an approach for reinforcement learning environments where an agent uses a policy as a function that has a probability of taking an action given a state. For following through with this action, the agent receives a reward. A policy is said to be good if it results in a large reward over an episode of the environment. The optimal policy is the policy that maximizes the the reward obtained while following the policy. This environment being continuous would make using a Q-Learning Network approach fail where instead you are trying to figure out what is the best specific action. Instead we use two neural networks to approximate two values. The first network is called the Actor which is used to approximate the optimal policy where as the second network is the Critic which tries to estimate the reward from following that approximately optimal policy. This becomes a “try the policy” then “evaluate the policy” then “improve the policy” loop where the actor tries the policy and the critic evaluates the policy. The improving step comes from the actor and critic network updating through their loss functions.
-
-This is the general structure of what the method uses but there are some additional moving parts behind the scenes. This implementation uses Ornstein Uhlenbeck noise, a replay buffer, target networks, and soft updating.
-
-When first starting the training process, the actor and critic network are randomly initialized. During an episode at a time step, the actor network is given the current state and returns a value that is added to the Ornstein noise. This action is taken giving a new state as well as a reward for taking the previous action. This is then stored in the Replay Buffer in the form of a tuple (State, Action, Reward, NextState). Once the replay buffer has enough transitions, a random sample of them is taken and is used to help the critic network. The critic network is evaluated at the new state with an action given by the actor network evaluated at the new state. This value can be thought of as an approximation of the next reward from taking the next state, or expected Q value. Then both networks are updated, first the critic then the actor. This takes form of the mean squared error between the expected Q value and the actual Q value during a transition. The actor uses gradient ascent to update the actor network towards a better policy. Another more subtle issue that is run into is that if we update our networks every chance we get, it has the potential to become very unstable. To mitigate this problem, we will actually use two neural networks for both the actor and critic, although in the end we only care about one. The networks are our main actor network, main critic network, our target actor network and our target critic network. The target networks are held static for a fixed number of training steps while training the main networks as the goal of what the main network should be working towards. When the target networks are updated, they are pushed towards the main networks but do not get replaced completely by the main networks. This is called soft updating and makes things run much more smoothly.
+### How the model learns
+1. The actor and critic network, alongside their targets networks are randomly initialized.
+2. During an episode at a time step, the actor network is given the current state and returns a value that is added to the Ornstein noise. This is then stored in the Replay Buffer in the form of a tuple (State, Action, Reward, NextState). 
+4. The critic network is evaluated at the new state with an action given by the actor network evaluated at the new state. 
+5. Should the replay buffer be 'full' - a weight update through gradient ascent is instatiated. Both target networks are updated, first the critic then the actor. This takes form of the mean squared error between the expected Q value and the actual Q value during a transition. This guides the actor network toward a better policy.
+6. After we have updated both our target networks we use soft updates to update our main actor critic networks.
 
 # Rewards Result
-The agent achieves a score of roughly 30 after roguhly 700 episodes as evidence by the graph below:
+The agent achieves a score of roughly 30 after roughly 700 episodes as evidenced by the graph below:
 ![Reward Plots](./score_graphs.jpg)
 
 # Ideas for Future Work
