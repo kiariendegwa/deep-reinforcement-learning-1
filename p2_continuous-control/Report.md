@@ -61,5 +61,5 @@ In order for the model to learn how best to evaluate a state in the Q-table, it 
 ```Q(s, a) = A(a, s)+V(s)``` This allows the model to decouple these two state aspects by redefining the training objective as a multi-class problem. I.e. we can learn what states are valuable, whilst separately learning what actions are valuable given such states.
 
 # Trained model
-The neural weights of the trained actor-critic agent can be found in the link below
+The neural weights of the trained actor-critic agent can be found in the links below
 Trained model weights (DDPG) - [actor](./checkpoint_actor.pth), [critic](./checkpoint_critic.pth)
