@@ -30,7 +30,7 @@ The main scripts employed are:
     Stitches together all the moving parts and initiates the Agents training.
 
 # Unique model architecture details
-The DDPG Actor-critic model has the following unique architectural
+The DDPG Actor-critic model has the following unique adventageous designs
 ## 1. Experience Replay
 Each trajectory (s_t, a_t, r_t, s_t+1) gotten from interaction with the agent's environment is stored in a replay buffer. 
 These transitions are then sampled from randomly during gradient updates of the DQN agent. 
@@ -51,14 +51,11 @@ The DQN agent described above is Greedy in the limit with Infinite exploration (
 # Rewards Result
 The agent achieves a score of roughly 13.0 after 500 episodes as evidence by the graph below:
 ![Reward Plots](./score_graphs.jpg)
+
 # Ideas for Future Work
-The number of episodes required to learn the task, can most likely be improved by further augmenting the 
-DQN agent with some of the following architectural hacks.
-- [Prioritized Experienced Replay](https://arxiv.org/abs/1511.05952):
-This has the added advantage of allowing the model to prioritize certain experience tuples more often - rather than randomly sampling from out replay buffer. This could lead to faster more robust convergence.
-- [Dueling Network Architecture](https://arxiv.org/pdf/1511.06581.pdf)
-In order for the model to learn how best to evaluate a state in the Q-table, it must be able to estimate two primitives. Namely: given a state, the advantage of taking an action given that state A(s, a), and the state value V(s). This is represented by the equation:
-```Q(s, a) = A(a, s)+V(s)``` This allows the model to decouple these two state aspects by redefining the training objective as a multi-class problem. I.e. we can learn what states are valuable, whilst separately learning what actions are valuable given such states.
+Continuous state space problems have been solved by other creative problems such as PPO, A3C, or D4PG.
+Each of these have the added advantage of parallelizing training across multiple agents, thereby speeding up
+the accumulation of experience with which to train the actor-critic methods.
 
 # Trained model
 The neural weights of the trained actor-critic agent can be found in the links below
