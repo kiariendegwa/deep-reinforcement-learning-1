@@ -2,7 +2,7 @@
 This report is based on a DDPG algorithm for a continuous control task, whereby the goal is to teach a robot arm(with 2 d.o.f.) how to 
 follow a randomly moving target. The final algorithm is based on the paper: [Continuous control with Deep RL](https://arxiv.org/pdf/1509.02971.pdf). The final algorithm that resulted in the following training graph was heavily based of the exercises within Udacity's Continuous Control section.
 
-# Learning Algorithm
+## Learning Algorithm particulars
 The main scripts employed are:
 * ```ddpg_agent.py```:
 
