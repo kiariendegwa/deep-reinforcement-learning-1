@@ -9,8 +9,8 @@ For each succesful serve each player gets a reward of either +/-0.01.
 The environment is solved once a score of 0.5 is achieved across 100 consecutive episodes.
 
 ### The Tennis Environment
-The environment is comprised of 8 state variables - describing position and velocity of the ball.
-The action space is comprised of 2 actions - movement to/fro from the net and up/down.
+* The environment is comprised of 8 state variables - describing position and velocity of the ball.
+* The action space is comprised of 2 actions - movement to/fro from the net and up/down.
 
 ## Moving parts of the MADDPG algorithm
 
