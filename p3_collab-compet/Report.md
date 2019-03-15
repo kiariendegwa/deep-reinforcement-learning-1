@@ -34,7 +34,7 @@ Each action carried out by the exploratory phase of the *actor* is subject to no
 The agents share a single buffer. This is used to update their joint critic model. Thus allowing the agents to share a single store of memory although competing against each other - policy wise. Each corresponding buffer entry (s, a, r, s') is completed decorrelated by 
 randomly sampling when training the critic. This allows for gradient stabilization; as it stops catastrophic forgetting from taking place as a stack based algorithm would be destabilized by time correlated sequential tuples.
 
-#### Neural net architecture of the agents
+#### Neural-net architecture of the agents
 All agents - 2 agents (2 actor networks, 1 critic) and their accompanying local and target networks). Share a single neural architecture comprised of:
 * 2 fully connected NNs with ReLu activation
 * Actor LR: 10^-4, Critic LR: 10^-3
@@ -43,10 +43,14 @@ All agents - 2 agents (2 actor networks, 1 critic) and their accompanying local 
 * Batch size: 256
 * Replay buffer: 10000
 * Weight decay: 0 
-### Overall system hyper-parameters
 
 ## Final trained algorithm curves
 
 ## Future improvements:
-* Prioritized experience replay
-* Further Hyper-parameter tuning
+* Prioritized experience replay: 
+  
+  This could improve convergence speed.
+
+* Further Hyper-parameter tuning: 
+  
+  There are a lot of hyper-parameters in this model. Maybe using some metalearning approach could be used to solve this.
