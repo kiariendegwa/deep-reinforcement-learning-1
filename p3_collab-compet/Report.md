@@ -37,12 +37,13 @@ randomly sampling when training the critic. This allows for gradient stabilizati
 #### Neural-net architecture of the agents
 All agents - 2 agents (2 actor networks, 1 critic) and their accompanying local and target networks). Share a single neural architecture comprised of:
 * 2 fully connected NNs with ReLu activation
-* Actor LR: 10^-4, Critic LR: 10^-3
+* Actor LR: 2e-4, Critic LR: 2e-4
 * Adam Optimizer
 * Tau: 10^-3
-* Batch size: 256
-* Replay buffer: 10000
+* Batch size: 128
+* Replay buffer: 1e5
 * Weight decay: 0 
+* Gamma: 0.99
 
 ## Final trained algorithm curves
 
