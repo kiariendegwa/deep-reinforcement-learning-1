@@ -45,7 +45,16 @@ All agents - 2 agents (2 actor networks, 1 critic) and their accompanying local 
 * Weight decay: 0 
 * Gamma: 0.99
 
-## Final trained algorithm curves
+## Final trained algorithm curves and weights
+The algorithm converges after ~2600 episodes as shown in the graphs below:
+[Optimization graphs](./score_graphs.jpg)
+
+The resultant agents model weights can be found here:
+
+* [actor_agent 0](checkpoint_actor_agent_0.pth)
+* [critic agent 0](checkpoint_critic_agent_0.pth)
+* [actor agent 1](checkpoint_actor_agent_1.pth)
+* [critic agent 1](checkpoint_critic_agent_1.pth)
 
 ## Future improvements:
 * Prioritized experience replay: 
