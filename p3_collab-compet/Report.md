@@ -47,7 +47,7 @@ All agents - 2 agents (2 actor networks, 1 critic) and their accompanying local 
 
 ## Final trained algorithm curves and weights
 The algorithm converges after ~2600 episodes as shown in the graphs below:
-[Optimization graphs](./score_graphs.jpg)
+![Optimization graphs](./score_graphs.jpg) 
 
 The resultant agents model weights can be found here:
 
